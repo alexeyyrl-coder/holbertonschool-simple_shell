@@ -11,5 +11,6 @@
 #include <sys/stat.h>
 
 extern char **environ;
+void forkos(char *command, char **args);
 
 #endif
