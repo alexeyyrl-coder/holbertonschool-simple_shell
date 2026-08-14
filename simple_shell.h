@@ -12,5 +12,6 @@
 
 extern char **environ;
 void forkos(char *command, char **args);
+int whileprocess(void);
 
 #endif
