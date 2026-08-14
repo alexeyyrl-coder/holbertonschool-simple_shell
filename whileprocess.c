@@ -1,9 +1,5 @@
 #include "simple_shell.h"
 
-/*
-*c'est l'exo 2. simpel shell 0.1
-*/
-
 int whileprocess(void)
 {
     char *command = NULL;
@@ -57,10 +53,4 @@ int whileprocess(void)
             return (0);
         }
     }
-}
-
-int main(void)
-{
-    whileprocess;   
-    return (0);
 }
