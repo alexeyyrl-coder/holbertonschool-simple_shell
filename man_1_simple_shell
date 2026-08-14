@@ -1,20 +1,6 @@
-.TH HSH 1 "August 2026" "Simple Shell" "User Commands"
-
-.SH NAME
-hsh \- simple UNIX command interpreter
-
-.SH SYNOPSIS
-.B ./hsh
-
-.SH DESCRIPTION
-.B hsh
-is a simple UNIX command interpreter.
-
-It reads commands from the standard input and executes them.
-
 The shell can be used in interactive mode or non-interactive mode.
 
-.SH INTERACTIVE MODE
+.SH "INTERACTIVE MODE"
 To start the shell in interactive mode:
 
 .nf
@@ -31,7 +17,7 @@ $ ./hsh
 ($) exit
 .fi
 
-.SH NON-INTERACTIVE MODE
+.SH "NON-INTERACTIVE MODE"
 The shell can also receive commands through standard input.
 
 Example:
@@ -40,7 +26,7 @@ Example:
 echo "/bin/ls" | ./hsh
 .fi
 
-.SH EXIT STATUS
+.SH "EXIT STATUS"
 The shell returns an exit status depending on the result of the executed
 command or internal operation.
 
@@ -65,3 +51,59 @@ echo "/bin/ls" | ./hsh
 
 .SH AUTHORS
 Written by Leonid Kuryshev and contributors.
+
+.SH "VERSION FRANCAISE"
+Le shell peut etre utilise en mode interactif ou en mode non interactif.
+
+.SH "MODE INTERACTIF"
+Pour demarrer le shell en mode interactif :
+
+.nf
+./hsh
+.fi
+
+Le shell affiche une invite de commande et attend que l'utilisateur
+entre une commande.
+
+Exemple :
+
+.nf
+$ ./hsh
+($) /bin/ls
+($) exit
+.fi
+
+.SH "MODE NON INTERACTIF"
+Le shell peut egalement recevoir des commandes depuis l'entree standard.
+
+Exemple :
+
+.nf
+echo "/bin/ls" | ./hsh
+.fi
+
+.SH "STATUT DE SORTIE"
+Le shell retourne un statut de sortie en fonction du resultat de la
+commande executee ou d'une operation interne.
+
+.SH EXEMPLES
+Lancer le shell :
+
+.nf
+./hsh
+.fi
+
+Executer une commande :
+
+.nf
+($) /bin/ls
+.fi
+
+Executer une commande en mode non interactif :
+
+.nf
+echo "/bin/ls" | ./hsh
+.fi
+
+.SH AUTEURS
+Ecrit par Leonid Kuryshev et les contributeurs.
