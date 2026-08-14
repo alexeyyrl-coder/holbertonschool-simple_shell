@@ -6,6 +6,6 @@
 
 int main(void)
 {
-    whileprocess;   
+    whileprocess(); 
     return (0);
 }
