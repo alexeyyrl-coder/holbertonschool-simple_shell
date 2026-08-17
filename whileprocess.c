@@ -51,15 +51,15 @@ int whileprocess(void)
                     }
                 }
 
-            if (getline_result == -1) /* EOF ou erreur de lecture */
-            {
+        }
+        if (getline_result == -1) /* EOF ou erreur de lecture */
+         {
             
                 if (isatty(STDIN_FILENO))
                     printf("\n");
 
                 free(command); /*libérent la mémoire*/
                 return (0);
-            }
         }
     }
 }
