@@ -13,7 +13,7 @@ char *find_command(char *command)
 
         if (stat(command, &st) == 0)
         {
-            strdup(command);
+            return (strdup(command));
         }
             return(NULL);
     }
