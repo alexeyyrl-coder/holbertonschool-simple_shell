@@ -12,5 +12,7 @@
 extern char **environ;
 void forkos(char *command, char **args);
 int whileprocess(void);
+char *find_command(char *command);
+char *tokenizator(char *path_copy, char *command);
 
 #endif
