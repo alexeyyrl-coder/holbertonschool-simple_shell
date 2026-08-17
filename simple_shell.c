@@ -4,8 +4,9 @@
 *c'est l'exo 2. simpel shell 0.1
 */
 
-int main(void)
+int main(int argc, char **argv)
 {
-    whileprocess(); 
-    return (0);
+    (void)argc;
+
+    return (whileprocess(argv[0]));
 }

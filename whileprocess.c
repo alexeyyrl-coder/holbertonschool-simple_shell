@@ -1,6 +1,6 @@
 #include "simple_shell.h"
 
-int whileprocess(void)
+int whileprocess(char *program_name)
 {
     char *command = NULL; /*pointe vers la la commende*/
     size_t taille = 0; /*initialiste la taille de la commende */
@@ -9,8 +9,9 @@ int whileprocess(void)
     char *token; /*decoupe la commende*/
     int i; /*variable conter*/
     char *resolved;
+    int status = 0;
 
-
+    int command_count = 0;
     while (1) /*boucle programme*/
     {
         if(isatty(STDIN_FILENO)) /*si le terminal prend l'entréer du clavier (isatty = terminal)(STDIN_FILEON = entrer du clavier) ça permet au shell de distinguer le mod interactifs*/
@@ -41,6 +42,7 @@ int whileprocess(void)
                 args[i] = NULL; /* ajoute une marque de fin pour que le forkos puissent les utiliser*/
                 if (args[0] != NULL)
                 {
+                    command_count++;
                     resolved = find_command(args[0]);
 
                     if (resolved != NULL)
@@ -48,6 +50,11 @@ int whileprocess(void)
                         args[0] = resolved;
                         forkos(command, args);
                         free(resolved);
+                    }
+                    else
+                    {
+                        fprintf(stderr, "%s: %d: %s: not found\n",program_name, command_count, args[0]);
+                        status = 127;
                     }
                 }
 
@@ -59,7 +66,7 @@ int whileprocess(void)
                     printf("\n");
 
                 free(command); /*libérent la mémoire*/
-                return (0);
+                return (status);
         }
     }
 }
