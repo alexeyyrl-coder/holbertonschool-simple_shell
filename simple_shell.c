@@ -1,12 +1,15 @@
 #include "simple_shell.h"
 
-/*
-*c'est l'exo 2. simpel shell 0.1
-*/
-
+/**
+ * main - Entry point for the simple shell
+ * @argc: Number of command line arguments
+ * @argv: Array of command line arguments
+ *
+ * Return: Exit status of the shell
+ */
 int main(int argc, char **argv)
 {
-    (void)argc;
+	(void)argc;
 
-    return (whileprocess(argv[0]));
+	return (whileprocess(argv[0]));
 }
