@@ -10,9 +10,10 @@
 #include <sys/stat.h>
 
 extern char **environ;
+
 void forkos(char *command, char **args);
 int whileprocess(char *program_name);
 char *find_command(char *command);
 char *tokenizator(char *path_copy, char *command);
 
-#endif
+#endif /* SIMPLE_SHELL_H */
