@@ -17,6 +17,12 @@ static int process_args(char **args, char *command,
 	if (args[0] == NULL)
 		return (0);
 
+	if (strcmp (args[0], "exit") == 0)
+    {
+        free (command);
+        exit (0);
+    }
+
 	resolved = find_command(args[0]);
 
 	if (resolved != NULL)
